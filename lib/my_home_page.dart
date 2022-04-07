@@ -27,44 +27,89 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Colors.greenAccent,
 
 
-        child:Column(
-          mainAxisAlignment:MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child:Row(
+          //mainAxisAlignment:MainAxisAlignment.spaceEvenly,
+          //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 3,
-                  //style: BorderStyle.solid
-                ),
-             borderRadius: BorderRadius.circular(25) ,
-                image: DecorationImage(
-                  image: NetworkImage("https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
-                  ),fit:BoxFit.fill
-                )
-              ),
-              height: 200,//screenheight/5,
-              width:200, //screenwidth/2,
-              /*child: Image.network(
-                "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
-                fit: BoxFit.cover,
-              ),*/
-            ),
-            Text("hello"),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25) ,
-                  image: DecorationImage(
-                      image: AssetImage("assets/image/pic1.jpg"
+            Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 3,
+                      //style: BorderStyle.solid
+                    ),
+                 borderRadius: BorderRadius.circular(25) ,
+                    image: DecorationImage(
+                      image: NetworkImage("https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
                       ),fit:BoxFit.fill
-                  )
-              ),
-              height:200,//screenheight/5,
-              width: 200,//screenwidth/2,
-              /*child: Image.network(
-                "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
-                fit: BoxFit.cover,
-              ),*/
+                    )
+                  ),
+                  height: 200,//screenheight/5,
+                  width:200, //screenwidth/2,
+                  /*child: Image.network(
+                    "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                    fit: BoxFit.cover,
+                  ),*/
+                ),
+                Text("nature picture"),
+                Container(
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 3,
+                        //style: BorderStyle.solid
+                      ),
+                      borderRadius: BorderRadius.circular(25) ,
+                      image: DecorationImage(
+                          image: NetworkImage("https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg"
+                          ),fit:BoxFit.fill
+                      )
+                  ),
+                  height: 200,//screenheight/5,
+                  width:200, //screenwidth/2,
+                  /*child: Image.network(
+                    "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                    fit: BoxFit.cover,
+                  ),*/
+                ),
+
+              ],
+            ),
+
+            Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25) ,
+                      image: DecorationImage(
+                          image: AssetImage("assets/image/pic1.jpg"
+                          ),fit:BoxFit.fill
+                      )
+                  ),
+                  height:200,//screenheight/5,
+                  width: 200,//screenwidth/2,
+                  /*child: Image.network(
+                    "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                    fit: BoxFit.cover,
+                  ),*/
+                ),
+                Text("nature picture"),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25) ,
+                      image: DecorationImage(
+                          image: AssetImage("assets/image/pic1.jpg"
+                          ),fit:BoxFit.fill
+                      )
+                  ),
+                  height:200,//screenheight/5,
+                  width: 200,//screenwidth/2,
+                  /*child: Image.network(
+                    "https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg",
+                    fit: BoxFit.cover,
+                  ),*/
+                ),
+              ],
             ),
 
           ],
