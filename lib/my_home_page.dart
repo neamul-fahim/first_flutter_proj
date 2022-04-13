@@ -1,3 +1,5 @@
+import 'package:first_flutter_p/button-screen1.dart';
+import 'package:first_flutter_p/button_screen.dart';
 import 'package:first_flutter_p/image-full.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,8 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
-
+   Color btnColor=Colors.blue;
+   String btnText= "don't touch";
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -34,6 +37,21 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: SizedBox(
+                    height: 50,
+                    width: 100,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.amber
+                      ),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>BtnScreen()));
+      },
+                        child: Text("this is button 1")),
+                  ),
+                ),
                 InkWell(
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute
@@ -84,9 +102,47 @@ class _MyHomePageState extends State<MyHomePage> {
 
               ],
             ),
+            Column(
+             children: [
+               Padding(
 
+                 padding: const EdgeInsets.all(20.0),
+                 child: SizedBox(
+                   height: 50,
+                   width: 100,
+                   child: ElevatedButton(
+                       style: ElevatedButton.styleFrom(
+                           primary: btnColor
+                       ),
+                       onPressed: (){
+                         setState(() {
+                           btnColor=Colors.red;
+                           btnText="you made me red";
+
+                         });
+                       },
+                       child: Text(btnText)),
+                 ),
+               ),
+             ],
+            ),
             Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: SizedBox(
+                    height: 50,
+                    width: 100,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.amber
+                        ),
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>BtnScreent1()));
+                        },
+                        child: Text("this is button 2")),
+                  ),
+                ),
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25) ,
