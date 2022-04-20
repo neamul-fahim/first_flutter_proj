@@ -3,6 +3,7 @@ import 'package:first_flutter_p/button_screen.dart';
 import 'package:first_flutter_p/image-full.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -13,6 +14,14 @@ class MyHomePage extends StatefulWidget {
 }
    Color btnColor=Colors.blue;
    String btnText= "don't touch";
+
+   List<String> imagelist=[
+     'assets/image/pic1.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic2.jpg'];
+   List<String> namelist=['pic1','pic2','pic3','pic4'];
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -26,12 +35,73 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Bangladesh"),
       ),
       body:Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: imagelist.length,
+                  itemBuilder: (context,index){
+
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox
+                      (
+                      height: 300,
+                        width: 200,
+
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap:(){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>FullImage(
+                                    imageLink: imagelist[index],
+                                    name: namelist[index])));
+                    },
+                              child: SizedBox
+                        (
+                                  height:280,
+                                  child: Image.asset(imagelist[index],fit: BoxFit.cover,)),
+                            ),
+                            Text(namelist[index]),
+                          ],
+                        )),
+                  );
+                  }
+
+
+      ),
+            ),
+          ],
+        ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /*body:Container(
         height:screenheight,
         width:screenwidth,
         color: Colors.greenAccent,
-
-
-        child:Row(
+          child:Row(
           //mainAxisAlignment:MainAxisAlignment.spaceEvenly,
           //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -179,6 +249,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ],
         ),
+        */
+
+
+
+
+
+
+
+
 
         /* child: SingleChildScrollView(
           child: Column(
