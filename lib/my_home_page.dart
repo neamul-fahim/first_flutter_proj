@@ -1,5 +1,6 @@
 import 'package:first_flutter_p/button-screen1.dart';
 import 'package:first_flutter_p/button_screen.dart';
+import 'package:first_flutter_p/gridview.dart';
 import 'package:first_flutter_p/image-full.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -41,6 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            ElevatedButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>GridViewImage(
+                      imagelink: imagelist,
+                      namelink: namelist)));
+                },
+                child: Text("gridview")),
+
             Expanded(
               child: ListView.builder(
                 itemCount: imagelist.length,
