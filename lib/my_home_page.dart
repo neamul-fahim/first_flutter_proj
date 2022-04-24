@@ -18,10 +18,25 @@ class MyHomePage extends StatefulWidget {
 
    List<String> imagelist=[
      'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
      'assets/image/pic1.jpg',
      'assets/image/pic2.jpg',
-     'assets/image/pic2.jpg'];
-   List<String> namelist=['pic1','pic2','pic3','pic4'];
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+     'assets/image/pic2.jpg',
+     'assets/image/pic1.jpg',
+   ];
+   List<String> namelist=['pic1','pic2','pic3','pic4','pic5','pic6','pic7','pic8','pic9','pic10','pic11','pic12',
+     'pic13','pic14','pic15','pic16','pic17'];
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
@@ -42,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
             ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>GridViewImage(
@@ -67,8 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             InkWell(
                               onTap:(){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>FullImage(
-                                    imageLink: imagelist[index],
-                                    name: namelist[index])));
+                                    imagelink: imagelist,
+                                    namelink: namelist,
+                                    index:index
+                                )));
                     },
                               child: SizedBox
                         (
