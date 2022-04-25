@@ -13,12 +13,21 @@ class GridViewImage extends StatefulWidget {
 }
 
 class _GridViewImageState extends State<GridViewImage> {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
 
-        title:Text("Gridview")
+        title:Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.add_photo_alternate_outlined),
+            Text("Gridview"),
+
+          ],
+        )
       ),
 
       body: GridView.count(

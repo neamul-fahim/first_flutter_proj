@@ -46,7 +46,10 @@ class _FullImageState extends State<FullImage> {
                    onTap: (){
                      setState(() {
                        if(widget.index>0)
-                         widget.index=widget.index-1;
+                         {
+                           widget.index=widget.index-1;
+                         }
+
 
                      });
                    },
