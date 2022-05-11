@@ -1,5 +1,6 @@
 import 'package:first_flutter_p/button-screen1.dart';
 import 'package:first_flutter_p/button_screen.dart';
+import 'package:first_flutter_p/facebookbookprofile/profile_first_module.dart';
 import 'package:first_flutter_p/gridview.dart';
 import 'package:first_flutter_p/image-full.dart';
 import 'package:flutter/cupertino.dart';
@@ -58,6 +59,47 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
 
         children: [
+
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder:(context)=>Profilefirstmodule(
+                      feturedpic: imagelist)));
+
+                },
+                child: Padding(
+                  
+                  padding: const EdgeInsets.only(left:8.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(50),
+                    ) ,
+                    //color: Colors.amber,
+                   // decoration: BoxDecoration(
+                     // borderRadius:BorderRadius(),
+
+                   // ),
+                      height: 60,
+                      width: 100,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.deepOrangeAccent,
+                            borderRadius: BorderRadius.circular(70)
+                          ),
+                          //color: Colors.orange,
+                            height: 40,
+                            width: 80,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:8.0,right:8.0,top:8),
+                              child: Text(" facebook    profile  "),
+                            )),
+                      )),
+                )),
+          ),
 
           ElevatedButton(
               onPressed: (){

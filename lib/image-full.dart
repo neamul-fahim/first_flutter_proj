@@ -17,11 +17,13 @@ class FullImage extends StatefulWidget {
   @override
   State<FullImage> createState() => _FullImageState();
 }
-  //int indexalter=widget.index; **************************************
-
+  double altheight=80;
+  double altwidth=80;
 class _FullImageState extends State<FullImage> {
   @override
   Widget build(BuildContext context) {
+    int arr = widget.index;  //************************************************************
+
     return Scaffold(
 
       appBar: AppBar(
@@ -35,13 +37,16 @@ class _FullImageState extends State<FullImage> {
             fontWeight: FontWeight.w800,fontSize: 30
           ),),
           SizedBox(
-              height: MediaQuery.of(context).size.height-200,
-              child: Image.network(widget.imagelink[widget.index],fit:BoxFit.cover,)),
+              height: MediaQuery.of(context).size.height-220,
+              child: Image.asset(widget.imagelink[widget.index],fit:BoxFit.cover,)),
 
            Row(
              mainAxisAlignment: MainAxisAlignment.center,
              crossAxisAlignment: CrossAxisAlignment.center,
              children: [
+               SizedBox(
+                 width: 50,
+               ),
                InkWell(
                    onTap: (){
                      setState(() {
@@ -54,6 +59,9 @@ class _FullImageState extends State<FullImage> {
                      });
                    },
                    child: Icon(Icons.arrow_back_ios_outlined)),
+               Spacer(),
+
+
                InkWell(
                    onTap: () {
                      setState(() {
@@ -61,7 +69,11 @@ class _FullImageState extends State<FullImage> {
                          widget.index = widget.index + 1;
                      });
                    },
-                   child: Icon(Icons.arrow_forward_ios_outlined))
+                   child: Icon(Icons.arrow_forward_ios_outlined)),
+               SizedBox(
+                 width: 50,
+               )
+
 
              ],
            ),
@@ -74,13 +86,16 @@ class _FullImageState extends State<FullImage> {
                  InkWell(
                      onTap: (){setState(() {
                        widget.index=i;
+                       altheight=100;
+                       altwidth=100;
                      });
 
                        },
                      child: Container(
-                       height: 80,
-                         width: 80,
-                         child: Image.asset(widget.imagelink[i]))) ,
+                       height: altheight,  //initial value of altheight is 80
+                         width: altwidth,  //initial value of althwidth is 80
+                         child: Image.asset(widget.imagelink[i],fit: BoxFit.cover,)
+                     )) ,
               ],
             ),
           )
