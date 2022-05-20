@@ -83,19 +83,33 @@ class _FullImageState extends State<FullImage> {
             child: Row(
               children: [
                 for( int i=0;i<widget.imagelink.length;i++)
-                 InkWell(
-                     onTap: (){setState(() {
-                       widget.index=i;
-                       altheight=100;
-                       altwidth=100;
-                     });
+                  widget.index==i?
+                 Padding(
+                   padding: const EdgeInsets.all(2.0),
+                   child: Container(
 
-                       },
-                     child: Container(
-                       height: altheight,  //initial value of altheight is 80
-                         width: altwidth,  //initial value of althwidth is 80
-                         child: Image.asset(widget.imagelink[i],fit: BoxFit.cover,)
-                     )) ,
+                     height: altheight+20,  //initial value of altheight is 80
+                       width: altwidth+20,  //initial value of althwidth is 80
+                       child: Image.asset(widget.imagelink[i],fit: BoxFit.cover,)
+                   ),
+                 ) :
+                InkWell(
+                  onTap: (){
+                    setState(() {
+                      widget.index=i;
+                    });
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: Container(
+
+                        height: altheight,  //initial value of altheight is 80
+                        width: altwidth,  //initial value of althwidth is 80
+                        child: Image.asset(widget.imagelink[i],fit: BoxFit.cover,)
+                    ),
+                  ),
+                ) ,
+
               ],
             ),
           )

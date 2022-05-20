@@ -16,7 +16,17 @@ class MyHomePage extends StatefulWidget {
 }
    Color btnColor=Colors.blue;
    String btnText= "don't touch";
-
+  List<String> fbfeturedpic=[
+    'assets/image/FB_IMG_1591515366745.jpg',
+    'assets/image/FB_IMG_1591515418655.jpg',
+    'assets/image/FB_IMG_1591515457114.jpg',
+    'assets/image/FB_IMG_1591515477353.jpg',
+    'assets/image/FB_IMG_1591515503228.jpg',
+    'assets/image/FB_IMG_1591515537972.jpg',
+    'assets/image/FB_IMG_1591515546161.jpg',
+    'assets/image/FB_IMG_1591515565940.jpg',
+    'assets/image/FB_IMG_1591515612475.jpg',
+  ];
    List<String> imagelist=[
      'assets/image/FB_IMG_1591515366745.jpg',
      'assets/image/FB_IMG_1591515418655.jpg',
@@ -65,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: InkWell(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder:(context)=>Profilefirstmodule(
-                      feturedpic: imagelist)));
+                      feturedpic: fbfeturedpic)));
 
                 },
                 child: Padding(
