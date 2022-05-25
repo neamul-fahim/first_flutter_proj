@@ -3,6 +3,7 @@ import 'package:first_flutter_p/button_screen.dart';
 import 'package:first_flutter_p/facebookbookprofile/profile_first_module.dart';
 import 'package:first_flutter_p/gridview.dart';
 import 'package:first_flutter_p/image-full.dart';
+import 'package:first_flutter_p/login/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -109,6 +110,15 @@ class _MyHomePageState extends State<MyHomePage> {
                             )),
                       )),
                 )),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(onPressed:() {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+            }
+            ,
+                child: Text("login button")),
           ),
 
           ElevatedButton(
