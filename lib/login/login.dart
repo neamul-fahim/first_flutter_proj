@@ -1,5 +1,6 @@
 import 'package:first_flutter_p/helps/pictures.dart';
 import 'package:first_flutter_p/helps/strings.dart';
+import 'package:first_flutter_p/signup/signup.dart';
 import 'package:flutter/material.dart';
 
 
@@ -43,7 +44,15 @@ class _LoginPageState extends State<LoginPage> {
          child: Column(
            children: [
              Padding(
-               padding:  EdgeInsets.only(top: 70.0,bottom:0 ,left:0 ,right:0 ),
+               padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 330,left:0 ),
+               child: Text("LOGIN",style: TextStyle(
+                   fontWeight: FontWeight.w900,
+                   fontSize: 30
+               ),),
+             ),
+
+             Padding(
+               padding:  EdgeInsets.only(top: 20.0,bottom:0 ,left:0 ,right:0 ),
                child: Container(
                   //color: Colors.white,
 
@@ -125,11 +134,6 @@ class _LoginPageState extends State<LoginPage> {
                  ),
                ),
              ),
-
-
-
-
-
 
 
 
@@ -269,12 +273,45 @@ class _LoginPageState extends State<LoginPage> {
                ),
              ),
 
+             Padding(
+               padding: const EdgeInsets.all(15.0),
+               child: Row(
+
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   Text("Don't have an account?",style: TextStyle(
+                 color: Colors.deepOrangeAccent,),
+                   ),
+                   InkWell(
+                       onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpPage()));
+
+
+                       },
+                       child: Container(
+                         height: dynamicHeight*0.05,
+                           width: dynamicWidth*0.05,
+                           decoration: BoxDecoration(
+                             borderRadius: BorderRadius.only(
+                                 topRight: Radius.circular(10),topLeft:Radius.circular(10) ,
+                                 bottomLeft:Radius.circular(10) ,bottomRight: Radius.circular(10)),
+                             color: Colors.deepOrangeAccent,
+                           ),
+
+                           child: Center(child: Text("signup")))),
+
+                 ],
+               ),
+             ),
+
 
 
            ],
 
           ),
-       )
+       ),
+
+
 
 
       ),
