@@ -1,3 +1,4 @@
+import 'package:first_flutter_p/drawer/drawer_structure.dart';
 import 'package:flutter/material.dart';
 class Profilefirstmodule extends StatefulWidget {
 
@@ -18,6 +19,7 @@ class _ProfilefirstmoduleState extends State<Profilefirstmodule> {
     double profiledp=MediaQuery.of(context).size.width;
 
     return Scaffold(
+      drawer:CustomAppDrawer(),
       appBar: AppBar(
         actions: [
             Icon(Icons.search_outlined)
@@ -31,6 +33,7 @@ class _ProfilefirstmoduleState extends State<Profilefirstmodule> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+
             Padding(
               padding: const EdgeInsets.all(8.0),
 
