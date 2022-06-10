@@ -28,6 +28,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: Container(
         //color: Colors.indigo,
         height: MediaQuery.of(context).size.height,
@@ -260,6 +263,7 @@ class _SignUpPageState extends State<SignUpPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 0,right:0 ,top: 2,bottom:0 ),
                 child: Container(
+
                   height: dynamicHeight*0.06,
                   width: dynamicWidth*0.4,
                   child: ElevatedButton(

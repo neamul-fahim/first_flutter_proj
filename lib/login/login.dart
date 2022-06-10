@@ -25,6 +25,9 @@ class _LoginPageState extends State<LoginPage> {
 
 
     return Scaffold(
+      appBar: AppBar(
+
+      ),
       body: Container(
         //color: Colors.indigo,
            height: MediaQuery.of(context).size.height,

@@ -1,4 +1,6 @@
 import 'package:first_flutter_p/drawer/drawer_options.dart';
+import 'package:first_flutter_p/my_home_page.dart';
+import 'package:first_flutter_p/signup/signup.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppDrawer extends StatefulWidget {
@@ -41,30 +43,21 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
           ),
         ),
 
-          drawerProperty(Icons.home_outlined, 'Home'),
-          SizedBox(
-          height: 10,
-          ),
-          drawerProperty(Icons.add_circle, 'Add Post'),
-          SizedBox(
-            height: 10,
-          ),
-          drawerProperty(Icons.notifications_active, 'Notification'),
-          SizedBox(
-            height: 10,
-          ),
+          drawerProperty(Icons.home_outlined, 'Home',context,()=>MyHomePage()),
+
+           drawerProperty(Icons.add_circle, 'Add Post',context,()=>SignUpPage()),
+
+           drawerProperty(Icons.notifications_active, 'Notification',context,()=>SignUpPage()),
+
          DrawerOptions(drawerOptionIcon: Icons.thumb_up_alt_rounded,
-             drawerOptionName: 'Likes'),
-          SizedBox(
-            height: 10,
+             drawerOptionName: 'Likes', classname:MyHomePage(),
           ),
-          DrawerOptions(drawerOptionIcon: Icons.settings,
-             drawerOptionName: 'Settings'),
-          SizedBox(
-            height: 10,
-          ),
-          DrawerOptions(drawerOptionIcon: Icons.logout_rounded,
-             drawerOptionName: 'LogOut'),
+
+          // DrawerOptions(drawerOptionIcon: Icons.settings,
+          //    drawerOptionName: 'Settings'),
+          //
+          // DrawerOptions(drawerOptionIcon: Icons.logout_rounded,
+          //    drawerOptionName: 'LogOut'),
 
 
 
@@ -73,23 +66,36 @@ class _CustomAppDrawerState extends State<CustomAppDrawer> {
     );
   }
 }
- Container drawerProperty(IconData drawerOptionIcon,String drawerOptionName){
+ Container drawerProperty(IconData drawerOptionIcon,String drawerOptionName,BuildContext context,Widget Function() className){
   return Container(
     child:Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Icon(drawerOptionIcon,color: Colors.black,),
-          SizedBox(
-            width: 10,
-          ),
-          Text(drawerOptionName,style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w400
+      padding: const EdgeInsets.all(15.0),
+      child: InkWell(
+        onTap: (){
+          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+            return className();
+          }));
 
-          ),),
-        ],
+        },
+        child: Row(
+          children: [
+            Icon(drawerOptionIcon,color: Colors.black,),
+            SizedBox(
+              width: 10,
+            ),
+            Text(drawerOptionName,style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w400
+
+            ),),
+          ],
+        ),
       ),
     )
   );
 }
+
+   // void pageRout(BuildContext context,className){
+   // Navigator.push(context, MaterialPageRoute(builder: (context)=>className));
+   //
+   // }
