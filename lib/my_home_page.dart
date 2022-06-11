@@ -16,6 +16,9 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
    Color btnColor=Colors.blue;
+ Color bottomNavigationBarCLr1 =Colors.black;
+ Color bottomNavigationBarCLr2 =Colors.black;
+ Color bottomNavigationBarCLr3 =Colors.black;
    String btnText= "don't touch";
   List<String> fbfeturedpic=[
     'assets/image/FB_IMG_1591515366745.jpg',
@@ -62,6 +65,52 @@ class _MyHomePageState extends State<MyHomePage> {
     double screenheight = MediaQuery.of(context).size.height;
     double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      bottomNavigationBar: Container(
+        color: Colors.amber,
+        child: Row(
+          children: [
+            Spacer(),
+            InkWell(
+                onTap: (){
+                  setState(() {
+                    if(bottomNavigationBarCLr1!=Colors.white) {
+                      bottomNavigationBarCLr1 = Colors.white;
+                      bottomNavigationBarCLr2 = Colors.black;
+                      bottomNavigationBarCLr3 = Colors.black;
+                    }
+                  });
+                },
+                child: Icon(Icons.menu,size: 40,color: bottomNavigationBarCLr1,)),
+            Spacer(),
+
+            InkWell(
+                onTap: (){
+                  setState(() {
+                    if(bottomNavigationBarCLr2!=Colors.white)
+                      bottomNavigationBarCLr2=Colors.white;
+                      bottomNavigationBarCLr1=Colors.black;
+                      bottomNavigationBarCLr3=Colors.black;
+                  });
+                },
+                child: Icon(Icons.home_outlined,size: 40,color: bottomNavigationBarCLr2,)),
+            Spacer(),
+
+            InkWell(
+                onTap: (){
+                  setState(() {
+                    if(bottomNavigationBarCLr3!=Colors.white)
+                      bottomNavigationBarCLr3=Colors.white;
+                      bottomNavigationBarCLr1=Colors.black;
+                      bottomNavigationBarCLr2=Colors.black;
+                  });
+                },
+                child: Icon(Icons.keyboard_return,size: 40,color: bottomNavigationBarCLr3,)),
+            Spacer(),
+
+          ],
+
+        ),
+      ),
       // appBar:AppBar(
       //   backgroundColor: Colors.teal,
       //   elevation:20,
