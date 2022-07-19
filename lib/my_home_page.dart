@@ -55,7 +55,6 @@ class MyHomePage extends StatefulWidget {
      'pic13','pic14','pic15','pic16'];
 
 
-
 class _MyHomePageState extends State<MyHomePage> {
   GlobalKey<SliderDrawerState> _key = GlobalKey<SliderDrawerState>();
   String title='home page';
@@ -226,7 +225,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       namelink: namelist,
                                       index:index
                                   )));
-                      },
+                               },
                                 child: SizedBox
                           (
                                     height:280,

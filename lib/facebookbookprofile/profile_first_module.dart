@@ -1,10 +1,25 @@
 import 'package:first_flutter_p/drawer/drawer_structure.dart';
 import 'package:flutter/material.dart';
+
+List<String> fbfeturedpic=[
+  'assets/image/FB_IMG_1591515366745.jpg',
+  'assets/image/FB_IMG_1591515418655.jpg',
+  'assets/image/FB_IMG_1591515457114.jpg',
+  'assets/image/FB_IMG_1591515477353.jpg',
+  'assets/image/FB_IMG_1591515503228.jpg',
+  'assets/image/FB_IMG_1591515537972.jpg',
+  'assets/image/FB_IMG_1591515546161.jpg',
+  'assets/image/FB_IMG_1591515565940.jpg',
+  'assets/image/FB_IMG_1591515612475.jpg',
+];
+
+
+
 class Profilefirstmodule extends StatefulWidget {
 
-  List<String> feturedpic;
+   List<String> feturedpic;
    Profilefirstmodule({Key? key,
-    required this.feturedpic,
+     required this.feturedpic
 
   }) : super(key: key);
 
@@ -44,7 +59,7 @@ class _ProfilefirstmoduleState extends State<Profilefirstmodule> {
                   ),
                   height: 282,
                   width: profiledp,
-                  child: Stack(
+                  child: Stack(   ////////////////////////////////////////////////////////////////////////////////
                     children: [
                       InkWell(
                         onTap: (){
@@ -417,7 +432,7 @@ class _ProfilefirstmoduleState extends State<Profilefirstmodule> {
                 //  borderRadius: BorderRadius.circular(10),
                   // color: Colors.black,
               //  ),
-                child: GridView.count(
+                child: GridView.count(   /////////////////////////////////////////////////////////////////////////
                   crossAxisCount:3,
                   children: [
                     for(int i=0;i<widget.feturedpic.length-3;i++)

@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 330,left:0 ),
                child: Text("LOGIN",style: TextStyle(
                    fontWeight: FontWeight.w900,
-                   fontSize: 30
+                   fontSize:15  ///***********************************************
                ),),
              ),
 
@@ -59,8 +59,8 @@ class _LoginPageState extends State<LoginPage> {
                child: Container(
                   //color: Colors.white,
 
-                 height: dynamicHeight*0.13,
-                 width: dynamicWidth*0.4,
+                 //height: dynamicHeight*0.13,
+                 width: dynamicWidth-100,
                  child: TextFormField(
                   validator: (inputString){
                     if(inputString==null || inputString.isEmpty)
@@ -105,9 +105,6 @@ class _LoginPageState extends State<LoginPage> {
                          width: 5,
                          color: Colors.lightGreen,
                        ),
-
-                       borderRadius: BorderRadius.only(topLeft:Radius.circular(0) ,topRight:Radius.circular(0) ,
-                           bottomLeft:Radius.circular(0) ,bottomRight:Radius.circular(0) ),
                      ),
 
                     errorBorder:UnderlineInputBorder(
@@ -141,12 +138,12 @@ class _LoginPageState extends State<LoginPage> {
 
 
              Padding(
-               padding:  EdgeInsets.only(top: 25.0,bottom:0 ,left:0 ,right:0 ),
+               padding:  EdgeInsets.only(top: 25.0,bottom:15 ,left:0 ,right:0 ),
                child: Container(
                  //color: Colors.white,
 
-                 height: dynamicHeight*0.13,
-                 width: dynamicWidth*0.4,
+                // height: dynamicHeight*0.13,
+                 width: dynamicWidth-100,
                  child: TextFormField(
                    validator: (inputString){
 
@@ -159,15 +156,13 @@ class _LoginPageState extends State<LoginPage> {
                        }
                      return null;
                    },
-                   obscuringCharacter: "*",
+                  // obscuringCharacter: "*",
                    obscureText:allStrings.obscureText ,
                    showCursor: true,
                    cursorColor: Colors.indigo,
                    // cursorHeight: 30,
                    decoration: InputDecoration(
-                     //contentPadding: EdgeInsets.only(left: 5,right: 5,top: 8,bottom: 8),
-                     //floatingLabelAlignment: FloatingLabelAlignment.center,
-                     //floatingLabelBehavior: FloatingLabelBehavior.auto,
+
 
                      suffixIcon: InkWell(
                        onTap: (){
@@ -212,9 +207,6 @@ class _LoginPageState extends State<LoginPage> {
                          color: Colors.lightGreen,
                        ),
 
-
-                     borderRadius: BorderRadius.only(topLeft:Radius.circular(0) ,topRight:Radius.circular(0) ,
-                           bottomLeft:Radius.circular(0) ,bottomRight:Radius.circular(0) ),
 
                      ),
 
@@ -292,8 +284,8 @@ class _LoginPageState extends State<LoginPage> {
 
                        },
                        child: Container(
-                         height: dynamicHeight*0.05,
-                           width: dynamicWidth*0.05,
+                         //height: dynamicHeight,
+                         //  width: dynamicWidth,
                            decoration: BoxDecoration(
                              borderRadius: BorderRadius.only(
                                  topRight: Radius.circular(10),topLeft:Radius.circular(10) ,
@@ -301,7 +293,12 @@ class _LoginPageState extends State<LoginPage> {
                              color: Colors.deepOrangeAccent,
                            ),
 
-                           child: Center(child: Text("signup")))),
+                           child: Padding(
+                             padding: const EdgeInsets.all(8.0),
+                             child: Text("signup"),
+                           )
+                       )
+                   ),
 
                  ],
                ),

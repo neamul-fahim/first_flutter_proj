@@ -39,7 +39,7 @@ class _FullImageState extends State<FullImage> {
               height: MediaQuery.of(context).size.height-220,
               child: Image.asset(widget.imagelink[widget.index],fit:BoxFit.cover,)),
 
-           Row(
+           Row(  //arrow action
              mainAxisAlignment: MainAxisAlignment.center,
              crossAxisAlignment: CrossAxisAlignment.center,
              children: [
