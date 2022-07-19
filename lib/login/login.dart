@@ -47,10 +47,10 @@ class _LoginPageState extends State<LoginPage> {
          child: Column(
            children: [
              Padding(
-               padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 330,left:0 ),
+               padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 0,left:0 ),
                child: Text("LOGIN",style: TextStyle(
                    fontWeight: FontWeight.w900,
-                   fontSize:15  ///***********************************************
+                   fontSize:35
                ),),
              ),
 

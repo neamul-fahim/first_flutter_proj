@@ -50,10 +50,10 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 310,left:0 ),
+                padding: const EdgeInsets.only(top:50 ,bottom: 0,right: 0,left:0 ),
                 child: Text("SIGNUP",style: TextStyle(
                     fontWeight: FontWeight.w900,
-                    fontSize: 20
+                    fontSize: 35
                 ),),
               ),
 
@@ -143,7 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
 
               Padding(
-                padding:  EdgeInsets.only(top: 25.0,bottom:0 ,left:0 ,right:0 ),
+                padding:  EdgeInsets.only(top: 25.0,bottom:15 ,left:0 ,right:0 ),
                 child: Container(
                   //color: Colors.white,
 
