@@ -252,6 +252,52 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
+
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 40,
+                  width: 120,
+                  decoration: BoxDecoration(
+                    // borderRadius: BorderRadius.circular(20),
+                    //color: Colors.white
+
+                  ),
+                  child: DropdownButton(
+                    //itemHeight: kMinInteractiveDimension,
+                      alignment: Alignment.center,
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+
+                      //iconDisabledColor: Colors.orange,
+                      dropdownColor: Colors.deepOrangeAccent,
+                      iconEnabledColor: Colors.deepOrangeAccent,
+                      focusColor: Colors.deepOrangeAccent,
+
+                      value: selectedGender,
+                      items: genderList.map((gender){
+                        return DropdownMenuItem<String>(
+                          value: gender,
+                          child: Text(gender),
+                        );
+                      }
+                      ).toList(),
+
+
+                      onChanged: (newValue){
+                        setState(() {
+                          selectedGender=newValue.toString();
+                        });
+
+                      }),
+                ),
+              ),
+
+
+
               Padding(
                 padding: const EdgeInsets.only(left: 0,right:0 ,top: 2,bottom:0 ),
                 child: Container(
@@ -272,46 +318,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
 
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 40,
-                  width: 120,
-                  decoration: BoxDecoration(
-                   // borderRadius: BorderRadius.circular(20),
-                    //color: Colors.white
 
-                  ),
-                  child: DropdownButton(
-                  //itemHeight: kMinInteractiveDimension,
-                    alignment: Alignment.center,
-                    style: TextStyle(
-                      color: Colors.white
-                    ),
-                    borderRadius: BorderRadius.circular(30),
-
-                    //iconDisabledColor: Colors.orange,
-                    dropdownColor: Colors.deepOrangeAccent,
-                      iconEnabledColor: Colors.deepOrangeAccent,
-                      focusColor: Colors.deepOrangeAccent,
-                      value: selectedGender,
-                      items: genderList.map((gender){
-                        return DropdownMenuItem<String>(
-                          value: gender,
-                          child: Text(gender),
-                        );
-                      }
-                      ).toList(),
-
-
-                      onChanged: (newValue){
-                        setState(() {
-                          selectedGender=newValue.toString();
-                        });
-
-                      }),
-                ),
-              ),
 
               Padding(
                 padding: const EdgeInsets.all(15.0),
