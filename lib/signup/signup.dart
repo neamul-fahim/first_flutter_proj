@@ -268,7 +268,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     //itemHeight: kMinInteractiveDimension,
                       alignment: Alignment.center,
                       style: TextStyle(
-                          color: Colors.white
+                          color: Colors.black
                       ),
                       borderRadius: BorderRadius.circular(30),
 
